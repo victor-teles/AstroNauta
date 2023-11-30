@@ -1,0 +1,120 @@
+:root,
+::backdrop {
+	/* Colors (dark mode) */
+
+    --nta-primary: 29 62% 59%;
+    --nta-primary-foreground: 60 9.1% 97.8%;
+	--nta-border: 240 4% 16%;
+	--nta-background: 22, 19% 7%;
+	--nta-foreground: 0 0% 100%;
+	--nta-secondary-foreground: 218 11% 65%;
+	--nta-markdown-paragraph: var(--nta-secondary-foreground);
+
+	--nta-accent: 217.2 32.6% 17.5%;
+    --nta-accent-foreground: 210 40% 98%;
+
+	--nta-color-backdrop-overlay: hsla(223, 13%, 10%, 0.66);
+
+	/* Shadows (dark mode) */
+	--nta-shadow-sm: 0px 1px 1px hsla(0, 0%, 0%, 0.12), 0px 2px 1px hsla(0, 0%, 0%, 0.24);
+	--nta-shadow-md: 0px 8px 4px hsla(0, 0%, 0%, 0.08), 0px 5px 2px hsla(0, 0%, 0%, 0.08),
+		0px 3px 2px hsla(0, 0%, 0%, 0.12), 0px 1px 1px hsla(0, 0%, 0%, 0.15);
+	--nta-shadow-lg: 0px 25px 7px hsla(0, 0%, 0%, 0.03), 0px 16px 6px hsla(0, 0%, 0%, 0.1),
+		0px 9px 5px hsla(223, 13%, 10%, 0.33), 0px 4px 4px hsla(0, 0%, 0%, 0.75),
+		0px 4px 2px hsla(0, 0%, 0%, 0.25);
+
+	/* Text size and line height */
+	--nta-text-xs: 0.8125rem; /* 13px */
+	--nta-text-sm: 0.875rem; /* 14px */
+	--nta-text-base: 1rem; /* 16px */
+	--nta-text-lg: 1.125rem; /* 18px */
+	--nta-text-xl: 1.25rem; /* 20px */
+	--nta-text-2xl: 1.5rem; /* 24px */
+	--nta-text-3xl: 1.8125rem; /* 29px */
+	--nta-text-4xl: 2.1875rem; /* 35px */
+	--nta-text-5xl: 2.625rem; /* 42px */
+	--nta-text-6xl: 4rem; /* 64px */
+
+	--nta-text-body: var(--nta-text-base);
+	--nta-text-body-sm: var(--nta-text-xs);
+	--nta-text-code: var(--nta-text-sm);
+	--nta-text-code-sm: var(--nta-text-xs);
+	--nta-text-h1: var(--nta-text-4xl);
+	--nta-text-h2: var(--nta-text-3xl);
+	--nta-text-h3: var(--nta-text-2xl);
+	--nta-text-h4: var(--nta-text-xl);
+	--nta-text-h5: var(--nta-text-lg);
+
+	--nta-line-height: 1.8;
+	--nta-line-height-headings: 1.2;
+
+	--nta-font-system: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol', 'Noto Color Emoji';
+	--nta-font-system-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+		'Courier New', monospace;
+	--nta-internal-font: var(--nta-font, ''), var(--nta-font-system);
+	--nta-internal-font-mono: var(--nta-font-mono, ''), var(--nta-font-system-mono);
+
+	/** Key layout values */
+	--nta-nav-height: 3.5rem;
+	--nta-nav-pad-x: 1rem;
+	--nta-nav-pad-y: 0.75rem;
+	--nta-mobile-toc-height: 3rem;
+	--nta-sidebar-width: 18.75rem;
+	--nta-sidebar-pad-x: 1rem;
+	--nta-content-width: 45rem;
+	--nta-content-pad-x: 1rem;
+	--nta-menu-button-size: 2rem;
+	--nta-nav-gap: var(--nta-content-pad-x);
+	/* Offset required to show outline inside an element instead of round the outside */
+	--nta-outline-offset-inside: -0.1875rem;
+
+	/* Global z-index values */
+	--nta-z-index-toc: 4;
+	--nta-z-index-menu: 5;
+	--nta-z-index-navbar: 10;
+	--nta-z-index-skiplink: 20;
+}
+
+:root[data-theme='light'],
+[data-theme='light'] ::backdrop {
+
+	--nta-border: 214.3 31.8% 91.4%;
+	--nta-background: 210 40% 98%;
+	--nta-foreground: 222.2 84% 4.9%;
+	--nta-secondary-foreground: 217, 19%, 27%;
+	--nta-markdown-paragraph: var(--nta-secondary-foreground);
+
+
+	--nta-accent: 210 40% 96.1%;
+    --nta-accent-foreground: 222.2 47.4% 11.2%;
+
+	--nta-color-backdrop-overlay: hsla(225, 9%, 36%, 0.66);
+
+	/* Shadows (light mode) */
+	--nta-shadow-sm: 0px 1px 1px hsla(0, 0%, 0%, 0.06), 0px 2px 1px hsla(0, 0%, 0%, 0.06);
+	--nta-shadow-md: 0px 8px 4px hsla(0, 0%, 0%, 0.03), 0px 5px 2px hsla(0, 0%, 0%, 0.03),
+		0px 3px 2px hsla(0, 0%, 0%, 0.06), 0px 1px 1px hsla(0, 0%, 0%, 0.06);
+	--nta-shadow-lg: 0px 25px 7px rgba(0, 0, 0, 0.01), 0px 16px 6px hsla(0, 0%, 0%, 0.03),
+		0px 9px 5px hsla(223, 13%, 10%, 0.08), 0px 4px 4px hsla(0, 0%, 0%, 0.16),
+		0px 4px 2px hsla(0, 0%, 0%, 0.04);
+}
+
+@media (min-width: 50em) {
+	:root {
+		--nta-nav-height: 4rem;
+		--nta-nav-pad-x: 1.5rem;
+		--nta-text-h1: var(--nta-text-5xl);
+		--nta-text-h2: var(--nta-text-4xl);
+		--nta-text-h3: var(--nta-text-3xl);
+		--nta-text-h4: var(--nta-text-2xl);
+	}
+}
+
+@media (min-width: 72rem) {
+	:root {
+		--nta-content-pad-x: 1.5rem;
+		--nta-mobile-toc-height: 0rem;
+	}
+}

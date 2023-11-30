@@ -3,7 +3,7 @@ title: Customizando Starlight
 description: Aprenda como fazer seu site Starlight único com sua própria logo, fontes customizadas, design de página inicial e mais.
 ---
 
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astronauta/docs/components';
 import FileTree from '../../../../components/file-tree.astro';
 
 Starlight providencia uma estilização e funcionalidades sensíveis padrões, para que você inicie rapidamente sem nenhuma configuração necessária.
@@ -405,13 +405,13 @@ Ele providencia módulos do npm que você pode isntalar para as fontes que você
 ### Utilize fontes
 
 Para aplicar a fonte que você definiu para o seu site, utilize o nome da sua fonte escolhida em um [arquivo CSS customizado](/pt-br/guides/css-and-tailwind/#estilos-css-customizados).
-Por exemplo, para sobrescrever a fonte padrão do Starlight em todo lugar, defina a propriedade customizada `--sl-font`:
+Por exemplo, para sobrescrever a fonte padrão do Starlight em todo lugar, defina a propriedade customizada `--nta-font`:
 
 ```css
 /* src/styles/customizada.css */
 
 :root {
-	--sl-font: 'IBM Plex Serif', serif;
+	--nta-font: 'IBM Plex Serif', serif;
 }
 ```
 

@@ -3,7 +3,7 @@ title: 自定义 Starlight
 description: 学习如何通过自定义样式、字体等使你的 Starlight 网站变得与众不同。
 ---
 
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astronauta/docs/components';
 import FileTree from '../../../../components/file-tree.astro';
 
 Starlight 提供了合理的默认样式和功能，因此你可以快速开始，无需配置即可进行操作。
@@ -390,13 +390,13 @@ hero:
 
 ### 使用字体
 
-要将设置好的字体应用于你的站点，请在[自定义 CSS 文件](/zh-cn/guides/css-and-tailwind/#custom-css-styles)中使用所选字体的名称。例如，要在整个站点上覆盖 Starlight 的默认字体，请设置`--sl-font`自定义属性：
+要将设置好的字体应用于你的站点，请在[自定义 CSS 文件](/zh-cn/guides/css-and-tailwind/#custom-css-styles)中使用所选字体的名称。例如，要在整个站点上覆盖 Starlight 的默认字体，请设置`--nta-font`自定义属性：
 
 ```css
 /* src/styles/custom.css */
 
 :root {
-	--sl-font: 'IBM Plex Serif', serif;
+	--nta-font: 'IBM Plex Serif', serif;
 }
 ```
 

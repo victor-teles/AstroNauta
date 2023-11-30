@@ -27,15 +27,15 @@
 }
 
 /* Product Hunt launch banner — can be removed on 30 August 2023. */
-[data-has-hero] .sl-banner {
-	--sl-color-banner-bg: #d73f37;
-	--sl-color-banner-text: #fff;
+[data-has-hero] .nta-banner {
+	--nta-color-banner-bg: #d73f37;
+	--nta-color-banner-text: #fff;
 	border-block: 1px solid #fff8;
 	padding-block: 0;
 	overflow: hidden;
 }
 
-[data-has-hero] .sl-banner a {
+[data-has-hero] .nta-banner a {
 	text-decoration: 1px underline;
 	text-underline-offset: 0.1em;
 }
@@ -54,7 +54,7 @@
 	flex-direction: column;
 	gap: 0.25rem 1rem;
 	text-align: start;
-	padding-block: var(--sl-nav-pad-y);
+	padding-block: var(--nta-nav-pad-y);
 }
 .ph-text strong {
 	font-weight: 600;

@@ -3,7 +3,7 @@ title: Кастомизация Starlight
 description: Узнайте, как сделать ваш сайт на Starlight уникальным с вашим логотипом, шрифтами, дизайном главной страницы и многим другим.
 ---
 
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astronauta/docs/components';
 import FileTree from '../../../../components/file-tree.astro';
 
 Starlight предоставляет осмысленные стили и функции по умолчанию, так что вы можете быстро начать работу без необходимости конфигурации.
@@ -414,13 +414,13 @@ hero:
 ### Использование шрифтов
 
 Чтобы применить шрифт, который вы настроили для вашего сайта, используйте имя вашего выбранного шрифта в [CSS-файле](/ru/guides/css-and-tailwind/#custom-css-styles).
-Например, чтобы заменить шрифт по умолчанию везде, установите пользовательское свойство `--sl-font`:
+Например, чтобы заменить шрифт по умолчанию везде, установите пользовательское свойство `--nta-font`:
 
 ```css
 /* src/styles/custom.css */
 
 :root {
-	--sl-font: 'IBM Plex Serif', serif;
+	--nta-font: 'IBM Plex Serif', serif;
 }
 ```
 

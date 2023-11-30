@@ -51,17 +51,17 @@ Jika _style_ ini tidak sesuai dengan tampilan komponen Anda, atur kelas `not-con
 ## Komponen Bawaan
 
 Starlight menyediakan beberapa komponen bawaan yang umum digunakan untuk keperluan dokumentasi.
-Komponen ini tersedia di _package_ `@astrojs/starlight/components`.
+Komponen ini tersedia di _package_ `@astronauta/docs/components`.
 
 ### Tabs
 
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astronauta/docs/components';
 
 Anda dapat menampilkan _interface_ berbasis tab menggunakan komponen `<Tabs>` dan `<TabItem>`.
 Setiap `<TabItem>` harus memiliki `label` untuk ditampilkan kepada pengguna.
 
 ```mdx
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astronauta/docs/components';
 
 <Tabs>
 	<TabItem label="Bintang">Sirius, Vega, Betelgeuse</TabItem>
@@ -78,7 +78,7 @@ Kode di atas akan menampilkan tab seperti berikut pada halaman:
 
 ### Cards
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astronauta/docs/components';
 
 Anda dapat menampilkan konten di dalam kotak yang sesuai dengan _style_ Starlight menggunakan komponen `<Card>`.
 Bungkus beberapa _card_ dalam komponen `<CardGrid>` untuk menampilkan _card-card_ secara berdampingan ketika ada cukup ruang.
@@ -86,7 +86,7 @@ Bungkus beberapa _card_ dalam komponen `<CardGrid>` untuk menampilkan _card-card
 `<Card>` memerlukan `title` dan secara opsional dapat ditambahkan atribut `icon` yang di-set dengan [nama salah satu icon bawaan Starlight](#all-icons).
 
 ```mdx
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astronauta/docs/components';
 
 <Card title="Cek sekarang">Konten menarik yang ingin Anda highlight.</Card>
 
@@ -134,7 +134,7 @@ Gunakan komponen `<LinkCard>` untuk menautkan ke berbagai halaman secara menonjo
 Gabungkan beberapa komponen `<LinkCard>` dalam `<CardGrid>` untuk menampilkan kartu secara berdampingan ketika terdapat cukup ruang.
 
 ```mdx
-import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import { LinkCard, CardGrid } from '@astronauta/docs/components';
 
 <LinkCard
 	title="Mengkustomisasi Starlight"
@@ -150,7 +150,7 @@ import { LinkCard, CardGrid } from '@astrojs/starlight/components';
 
 Kode di atas akan menampilkan hasil sebagai berikut:
 
-import { LinkCard } from '@astrojs/starlight/components';
+import { LinkCard } from '@astronauta/docs/components';
 
 <LinkCard
 	title="Mengkustomisasi Starlight"
@@ -165,7 +165,7 @@ import { LinkCard } from '@astrojs/starlight/components';
 
 ### Icon
 
-import { Icon } from '@astrojs/starlight/components';
+import { Icon } from '@astronauta/docs/components';
 import IconsList from '../../../../components/icons-list.astro';
 
 Starlight menyediakan sejumlah icon umum yang dapat Anda tampilkan dalam konten Anda menggunakan komponen `<Icon>`.
@@ -173,7 +173,7 @@ Starlight menyediakan sejumlah icon umum yang dapat Anda tampilkan dalam konten 
 Setiap `<Icon>` membutuhkan atribut [`name`](#all-icons) dan dapat secara opsional menyertakan atribut `label`, `size`, dan `color`.
 
 ```mdx
-import { Icon } from '@astrojs/starlight/components';
+import { Icon } from '@astronauta/docs/components';
 
 <Icon name="star" color="goldenrod" size="2rem" />
 ```

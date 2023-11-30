@@ -1,0 +1,76 @@
+---
+import Icon from './Icon.astro';
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends Omit<HTMLAttributes<'a'>, 'title'> {
+	title: string;
+	description?: string;
+}
+
+const { title, description, ...attributes } = Astro.props;
+---
+
+<div>
+	<span class="nta-flex stack">
+		<a {...attributes}>
+			<span class="title" set:html={title} />
+		</a>
+		{description && <span class="description" set:html={description} />}
+	</span>
+	<Icon name="right-arrow" size="1.333em" class="icon rtl:flip" />
+</div>
+
+<style>
+	div {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 0.5rem;
+		border: 1px solid var(--nta-color-gray-5);
+		border-radius: 0.5rem;
+		padding: 1rem;
+		box-shadow: var(--nta-shadow-sm);
+		position: relative;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	/* a11y fix for https://github.com/withastro/starlight/issues/487 */
+	a::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+	}
+
+	.stack {
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.title {
+		color: var(--nta-color-white);
+		font-weight: 600;
+		font-size: var(--nta-text-lg);
+		line-height: var(--nta-line-height-headings);
+	}
+
+	.description {
+		color: var(--nta-color-gray-3);
+		line-height: 1.5;
+	}
+
+	.icon {
+		color: var(--nta-color-gray-3);
+	}
+
+	/* Hover state */
+	div:hover {
+		background: var(--nta-color-gray-7, var(--nta-color-gray-6));
+		border-color: var(--nta-color-gray-2);
+	}
+
+	div:hover .icon {
+		color: var(--nta-color-white);
+	}
+</style>

@@ -66,7 +66,7 @@ El ejemplo a continuación muestra un componente personalizado que renderiza un 
 ---
 // src/components/EmailLink.astro
 import type { Props } from '@astrojs/starlight/props';
-import Default from '@astrojs/starlight/components/SocialIcons.astro';
+import Default from '@astronauta/docs/components/SocialIcons.astro';
 ---
 
 <a href="mailto:houston@example.com">Escríbeme</a>
@@ -114,7 +114,7 @@ En el siguiente ejemplo, un componente que sobreescribe el [`Footer`](/es/refere
 ---
 // src/components/ConditionalFooter.astro
 import type { Props } from '@astrojs/starlight/props';
-import Default from '@astrojs/starlight/components/Footer.astro';
+import Default from '@astronauta/docs/components/Footer.astro';
 
 const isHomepage = Astro.props.slug === '';
 ---

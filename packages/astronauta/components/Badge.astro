@@ -1,0 +1,87 @@
+---
+import type { Badge } from '../schemas/badge';
+
+interface Props {
+	variant?: Badge['variant'] | 'outline';
+	text?: string;
+}
+const { variant = 'default', text } = Astro.props;
+---
+
+<span class:list={['nta-badge', variant]} set:html={text} />
+
+<style>
+	.nta-badge {
+		display: inline-block;
+		border: 1px solid var(--nta-color-border-badge);
+		border-radius: 0.25rem;
+		font-family: var(--nta-internal-font-mono);
+		font-size: var(--nta-text-xs);
+		font-weight: 400;
+		padding: 0.125rem 0.375rem;
+		line-height: 1;
+		color: #fff;
+		background-color: var(--nta-color-bg-badge);
+		overflow-wrap: anywhere;
+	}
+
+	.outline {
+		--nta-color-bg-badge: transparent;
+		--nta-color-border-badge: currentColor;
+		color: inherit;
+	}
+
+	.default {
+		--nta-color-bg-badge: var(--nta-primary);
+		--nta-color-border-badge: var(--nta-color-accent);
+	}
+
+	.note {
+		--nta-color-bg-badge: var(--nta-color-blue-low);
+		--nta-color-border-badge: var(--nta-color-blue);
+	}
+
+	.danger {
+		--nta-color-bg-badge: var(--nta-color-red-low);
+		--nta-color-border-badge: var(--nta-color-red);
+	}
+
+	.success {
+		--nta-color-bg-badge: var(--nta-color-green-low);
+		--nta-color-border-badge: var(--nta-color-green);
+	}
+
+	.caution {
+		--nta-color-bg-badge: var(--nta-color-orange-low);
+		--nta-color-border-badge: var(--nta-color-orange);
+	}
+
+	.tip {
+		--nta-color-bg-badge: var(--nta-color-purple-low);
+		--nta-color-border-badge: var(--nta-color-purple);
+	}
+
+	:global([data-theme='light']) .default {
+		--nta-color-bg-badge: var(--nta-color-accent-high);
+	}
+
+	:global([data-theme='light']) .note {
+		--nta-color-bg-badge: var(--nta-color-blue-high);
+	}
+
+	:global([data-theme='light']) .danger {
+		--nta-color-bg-badge: var(--nta-color-red-high);
+	}
+
+	:global([data-theme='light']) .success {
+		--nta-color-bg-badge: var(--nta-color-green-high);
+	}
+
+	:global([data-theme='light']) .caution {
+		--nta-color-bg-badge: var(--nta-color-orange-high);
+	}
+
+	:global([data-theme='light']) .tip {
+		--nta-color-bg-badge: var(--nta-color-purple-high);
+	}
+</style>

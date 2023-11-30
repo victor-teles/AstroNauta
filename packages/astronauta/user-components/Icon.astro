@@ -1,0 +1,52 @@
+---
+import { Icons } from '../components/Icons';
+
+interface Props {
+	name: keyof typeof Icons;
+	label?: string;
+	color?: string;
+	size?: string;
+	class?: string;
+	type?: 'outline' | 'solid';
+}
+
+const { name, label, size = '1em', color, type = 'solid' } = Astro.props;
+const a11yAttrs = label ? ({ 'aria-label': label } as const) : ({ 'aria-hidden': 'true' } as const);
+---
+
+{
+	type === 'solid' ? (
+		<svg
+			{...a11yAttrs}
+			class={Astro.props.class}
+			width="16"
+			height="16"
+			viewBox="0 0 24 24"
+			fill="currentColor"
+			set:html={Icons[name]}
+		/>
+	) : (
+		<svg
+			{...a11yAttrs}
+			class={Astro.props.class}
+			width="16"
+			height="16"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			set:html={Icons[name]}
+		/>
+	)
+}
+
+<style define:vars={{ 'nta-icon-color': color, 'nta-icon-size': size }}>
+	svg {
+		color: var(--nta-icon-color);
+		font-size: var(--nta-icon-size, 1em);
+		width: 1em;
+		height: 1em;
+	}
+</style>

@@ -1,0 +1,29 @@
+---
+import type { Props } from '../props';
+---
+
+<div class="content-panel">
+	<div class="sl-container"><slot /></div>
+</div>
+
+<style>
+	.content-panel {
+		padding: 1.5rem var(--nta-content-pad-x);
+	}
+	.content-panel + .content-panel {
+		border-top: 1px solid var(--nta-color-hairline);
+	}
+	.nta-container {
+		max-width: var(--nta-content-width);
+	}
+
+	.nta-container > :global(* + *) {
+		margin-top: 1.5rem;
+	}
+
+	@media (min-width: 72rem) {
+		.nta-container {
+			margin-inline: var(--nta-content-margin-inline, auto);
+		}
+	}
+</style>

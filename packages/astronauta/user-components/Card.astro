@@ -1,0 +1,65 @@
+---
+import Icon from './Icon.astro';
+import type { Icons } from '../components/Icons';
+
+interface Props {
+	icon?: keyof typeof Icons;
+	title: string;
+}
+
+const { icon, title } = Astro.props;
+---
+
+<article class="card nta-flex">
+	<p class="title nta-flex">
+		{icon && <Icon name={icon} class="icon" size="1.333em" />}
+		<span set:html={title} />
+	</p>
+	<div class="body"><slot /></div>
+</article>
+
+<style>
+	.card {
+		--nta-card-border: var(--nta-color-purple);
+		--nta-card-bg: var(--nta-color-purple-low);
+		border: 1px solid var(--nta-color-gray-5);
+		background-color: var(--nta-color-black);
+		padding: clamp(1rem, calc(0.125rem + 3vw), 2.5rem);
+		flex-direction: column;
+		gap: clamp(0.5rem, calc(0.125rem + 1vw), 1rem);
+	}
+	.card:nth-child(4n + 1) {
+		--nta-card-border: var(--nta-color-orange);
+		--nta-card-bg: var(--nta-color-orange-low);
+	}
+	.card:nth-child(4n + 3) {
+		--nta-card-border: var(--nta-color-green);
+		--nta-card-bg: var(--nta-color-green-low);
+	}
+	.card:nth-child(4n + 4) {
+		--nta-card-border: var(--nta-color-red);
+		--nta-card-bg: var(--nta-color-red-low);
+	}
+	.card:nth-child(4n + 5) {
+		--nta-card-border: var(--nta-color-blue);
+		--nta-card-bg: var(--nta-color-blue-low);
+	}
+	.title {
+		font-weight: 600;
+		font-size: var(--nta-text-h4);
+		color: var(--nta-color-white);
+		line-height: var(--nta-line-height-headings);
+		gap: 1rem;
+		align-items: center;
+	}
+	.card .icon {
+		border: 1px solid var(--nta-card-border);
+		background-color: var(--nta-card-bg);
+		padding: 0.2em;
+		border-radius: 0.25rem;
+	}
+	.card .body {
+		margin: 0;
+		font-size: clamp(var(--nta-text-sm), calc(0.5rem + 1vw), var(--nta-text-body));
+	}
+</style>

@@ -1,0 +1,23 @@
+---
+import type { Props } from '../props';
+
+const { banner } = Astro.props.entry.data;
+---
+
+{banner && <div class="nta-banner" set:html={banner.content} />}
+
+<style>
+	.nta-banner {
+		--__nta-banner-text: var(--nta-color-banner-text, var(--nta-color-text-invert));
+		padding: var(--nta-nav-pad-y) var(--nta-nav-pad-x);
+		background-color: var(--nta-color-banner-bg, var(--nta-color-bg-accent));
+		color: var(--__nta-banner-text);
+		line-height: var(--nta-line-height-headings);
+		text-align: center;
+		text-wrap: balance;
+		box-shadow: var(--nta-shadow-sm);
+	}
+	.nta-banner :global(a) {
+		color: var(--__nta-banner-text);
+	}
+</style>

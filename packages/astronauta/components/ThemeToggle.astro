@@ -1,0 +1,90 @@
+---
+import type { Props } from '../props';
+import IconButton from './IconButton.astro';
+---
+
+<astronauta-theme-toggle>
+	<IconButton icon={'moon'} id="theme-moon-icon" type="outline" />
+	<IconButton class="nta-hidden" icon={'sun'} id="theme-sun-icon" type="outline" />
+</astronauta-theme-toggle>
+
+<script is:inline>
+AstronautaThemeProvider.updatePickers();
+</script>
+
+<script>
+	type Theme = 'dark' | 'light';
+
+	class AstronautaThemeToggle extends HTMLElement {
+		/** Key in `localStorage` to store color theme preference at. */
+		#key = 'astronauta-theme';
+		moonIcon = this.querySelector('#theme-moon-icon')!;
+		sunIcon = this.querySelector('#theme-sun-icon')!;
+
+		constructor() {
+			super();
+
+			const theme = this.#loadTheme();
+			this.#onThemeChange(theme);
+			this.#toggleIcon(theme);
+
+			const buttons = this.querySelectorAll('button');
+			if (buttons.length > 0) {
+				buttons.forEach((button) => {
+					button.addEventListener('click', (e) => {
+						if (e.currentTarget instanceof HTMLButtonElement) {
+							const theme = this.#loadTheme();
+							const newTheme = theme === 'dark' ? 'light' : 'dark';
+							this.#onThemeChange(newTheme);
+							this.#toggleIcon(newTheme);
+						}
+					});
+				});
+			}
+		}
+
+		#parseTheme(theme: unknown): Theme {
+			if (theme === 'dark' || theme === 'light') {
+				return theme;
+			} else {
+				return 'dark';
+			}
+		}
+
+		#onThemeChange(theme: Theme): void {
+			AstronautaThemeProvider.updatePickers(theme);
+			document.documentElement.dataset.theme = theme;
+			this.#storeTheme(theme);
+		}
+
+		/** Store the user’s preference in `localStorage`. */
+		#storeTheme(theme: Theme): void {
+			if (typeof localStorage !== 'undefined') {
+				if (theme === 'light' || theme === 'dark') {
+					localStorage.setItem(this.#key, theme);
+				} else {
+					localStorage.removeItem(this.#key);
+				}
+			}
+		}
+
+		/** Load the user’s preference from `localStorage`. */
+		#loadTheme(): Theme {
+			const theme = typeof localStorage !== 'undefined' && localStorage.getItem(this.#key);
+
+			return this.#parseTheme(theme);
+		}
+
+		#toggleIcon(theme: Theme) {
+			if (theme === 'dark') {
+				this.moonIcon.classList.remove('nta-hidden');
+				this.sunIcon.classList.add('nta-hidden');
+			} else {
+				this.moonIcon.classList.add('nta-hidden');
+				this.sunIcon.classList.remove('nta-hidden');
+			}
+		}
+	}
+
+	customElements.define('astronauta-theme-toggle', AstronautaThemeToggle);
+</script>

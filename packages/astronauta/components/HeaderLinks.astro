@@ -1,0 +1,29 @@
+---
+import config from 'virtual:astronauta/user-config';
+import type { Props } from '../props';
+
+const links = config.header.links ?? [];
+---
+
+{
+	links.length > 0 && (
+		<>
+			{links.map((link) => (
+				<a href={link.href} rel="me" class="nta-flex">
+					<span>{link.title}</span>
+				</a>
+			))}
+		</>
+	)
+}
+
+<style>
+	span {
+		font-weight: 500;
+		font-size: var(--nta-text-sm);
+	}
+
+	span:hover{
+		color: hsl(var(--nta-primary))
+	}
+</style>

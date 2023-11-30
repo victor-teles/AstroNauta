@@ -1,0 +1,84 @@
+---
+import Icon from '../user-components/Icon.astro';
+
+interface Props {
+	label: string;
+	value: string;
+	icon: Parameters<typeof Icon>[0]['name'];
+	width?: string;
+	options: Array<{
+		label: string;
+		value: string;
+		selected: boolean;
+	}>;
+}
+---
+
+<label style={`--nta-select-width: ${Astro.props.width}`}>
+	<span class="sr-only">{Astro.props.label}</span>
+	<select value={Astro.props.value}>
+		{
+			Astro.props.options.map(({ value, selected, label }) => (
+				<option value={value} selected={selected} set:html={label} />
+			))
+		}
+	</select>
+	<Icon name="down-caret" class="icon caret" />
+</label>
+
+<style>
+	label {
+		--nta-label-icon-size: 0.875rem;
+		--nta-caret-size: 1.25rem;
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+		color: var(--nta-color-gray-1);
+	}
+
+	label:hover {
+		color: var(--nta-color-gray-2);
+	}
+
+	.icon {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		pointer-events: none;
+	}
+
+	.label-icon {
+		font-size: var(--nta-label-icon-size);
+		inset-inline-start: 0;
+	}
+
+	.caret {
+		font-size: var(--nta-caret-size);
+		inset-inline-end: 0;
+	}
+
+	select {
+		border: 0;
+		padding-block: 0.625rem;
+		padding-inline: calc(var(--nta-label-icon-size) + 0.25rem) calc(var(--nta-caret-size) + 0.25rem);
+		width: var(--nta-select-width);
+		background-color: hsl(var(--nta-accent) / 40%);
+		text-overflow: ellipsis;
+		color: inherit;
+		cursor: pointer;
+		appearance: none;
+		border-radius: 0.5rem;
+	}
+
+	option {
+		background-color: var(--nta-color-bg-nav);
+		color: var(--nta-color-gray-1);
+	}
+
+	@media (min-width: 50rem) {
+		select {
+			font-size: var(--nta-text-sm);
+		}
+	}
+</style>

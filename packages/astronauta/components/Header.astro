@@ -1,0 +1,86 @@
+---
+import type { Props } from '../props';
+
+import {
+	LanguageSelect,
+	SiteTitle,
+	SocialIcons,
+	ThemeToggle,
+} from 'virtual:astronauta/components';
+import HeaderLinks from './HeaderLinks.astro';
+---
+
+<div class="header nta-flex">
+	<div class="nta-flex">
+		<SiteTitle {...Astro.props} />
+	</div>
+	<div class="nta-flex">
+		<!-- <Search {...Astro.props} /> -->
+	</div>
+	<div class="nta-hidden md:nta-flex right-group">
+
+		<div class="nta-flex header-links">
+			<HeaderLinks {...Astro.props} />
+		</div>
+
+		<div class="nta-flex social-icons">
+			<SocialIcons {...Astro.props} />
+		</div>
+		<ThemeToggle {...Astro.props} />
+		<LanguageSelect {...Astro.props} />
+	</div>
+</div>
+
+<style>
+	.header {
+		gap: var(--nta-nav-gap);
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+	}
+
+	.right-group,
+	.social-icons,
+	.header-links {
+		gap: 1rem;
+		align-items: center;
+	}
+
+
+	.header-links::after {
+		content: '';
+		height: 1rem;
+		border-inline-end: 1px solid hsl(var(--nta-border));
+	}
+
+	@media (min-width: 50rem) {
+		:global(:root[data-has-sidebar]) {
+			--__sidebar-pad: calc(2 * var(--nta-nav-pad-x));
+		}
+		:global(:root:not([data-has-toc])) {
+			--__toc-width: 0rem;
+		}
+		.header {
+			--__sidebar-width: max(0rem, var(--nta-content-inline-start, 0rem) - var(--nta-nav-pad-x));
+			--__main-column-fr: calc(
+				(
+						100% + var(--__sidebar-pad, 0rem) - var(--__toc-width, var(--nta-sidebar-width)) -
+							(2 * var(--__toc-width, var(--nta-nav-pad-x))) - var(--nta-content-inline-start, 0rem) -
+							var(--nta-content-width)
+					) / 2
+			);
+			display: grid;
+			grid-template-columns:
+        /* 1 (site title): runs up until the main content column’s left edge or the width of the title, whichever is the largest  */
+				minmax(
+					calc(var(--__sidebar-width) + max(0rem, var(--__main-column-fr) - var(--nta-nav-gap))),
+					auto
+				)
+				/* 2 (search box): all free space that is available. */
+				1fr
+				/* 3 (right items): use the space that these need. */
+				auto;
+			align-content: center;
+		}
+	}
+</style>

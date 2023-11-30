@@ -3,7 +3,7 @@ title: Starlight 사용자 정의
 description: 로고, 사용자 정의 글꼴, 랜딩 페이지 디자인 등을 사용하여 나만의 Starlight 사이트를 만드는 방법을 알아보세요.
 ---
 
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astronauta/docs/components';
 import FileTree from '../../../../components/file-tree.astro';
 
 Starlight는 합리적인 기본 스타일과 기능을 제공하므로 구성 없이 빠르게 시작할 수 있습니다. Starlight 사이트의 모양과 느낌을 바꾸고 싶다면 이 가이드를 참조하세요.
@@ -388,13 +388,13 @@ Starlight 사이트에 사용자 정의 글꼴을 추가해야 하는 경우, �
 
 ### 글꼴 사용
 
-설정한 글꼴을 웹 사이트에 적용하려면 [사용자 정의 CSS 파일](/ko/guides/css-and-tailwind/#사용자-정의-css-스타일)에서 선택한 글꼴 이름을 사용하세요. 예를 들어 Starlight의 기본 글꼴을 변경하려면 사용자 정의 속성인 `--sl-font`를 설정하세요.
+설정한 글꼴을 웹 사이트에 적용하려면 [사용자 정의 CSS 파일](/ko/guides/css-and-tailwind/#사용자-정의-css-스타일)에서 선택한 글꼴 이름을 사용하세요. 예를 들어 Starlight의 기본 글꼴을 변경하려면 사용자 정의 속성인 `--nta-font`를 설정하세요.
 
 ```css
 /* src/styles/custom.css */
 
 :root {
-	--sl-font: 'IBM Plex Serif', serif;
+	--nta-font: 'IBM Plex Serif', serif;
 }
 ```
 

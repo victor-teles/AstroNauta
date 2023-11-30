@@ -3,7 +3,7 @@ title: Customizing Starlight
 description: Learn how to make your Starlight site your own with your logo, custom fonts, landing page design and more.
 ---
 
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astronauta/docs/components';
 import FileTree from '../../../components/file-tree.astro';
 
 Starlight provides sensible default styling and features, so you can get started quickly with no configuration needed.
@@ -404,13 +404,13 @@ It provides npm modules you can install for the fonts you want to use and includ
 ### Use fonts
 
 To apply the font you set up to your site, use your chosen font’s name in a [custom CSS file](/guides/css-and-tailwind/#custom-css-styles).
-For example, to override Starlight’s default font everywhere, set the `--sl-font` custom property:
+For example, to override Starlight’s default font everywhere, set the `--nta-font` custom property:
 
 ```css
 /* src/styles/custom.css */
 
 :root {
-	--sl-font: 'IBM Plex Serif', serif;
+	--nta-font: 'IBM Plex Serif', serif;
 }
 ```
 

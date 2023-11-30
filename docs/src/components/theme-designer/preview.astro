@@ -14,8 +14,8 @@ interface Props extends HTMLAttributes<'div'> {
 }
 const { labels, ...attrs } = Astro.props;
 const light = 'data-light' in attrs;
-const linkColor = light ? '--sl-color-accent' : '--sl-color-accent-high';
-const codeBg = light ? '--sl-color-gray-6' : '--sl-color-gray-5';
+const linkColor = light ? '--nta-color-accent' : '--nta-color-accent-high';
+const codeBg = light ? '--nta-color-gray-6' : '--nta-color-gray-5';
 ---
 
 <div class="preview-card" {...attrs}>
@@ -24,7 +24,7 @@ const codeBg = light ? '--sl-color-gray-6' : '--sl-color-gray-5';
 		{labels.bodyText}
 		<span class="link" style={`color:var(${linkColor})`}>{labels.linkText}</span>
 		<span class="dim">{labels.dimText}</span>
-		<code style={`--sl-color-bg-inline-code:var(${codeBg})`}>{labels.inlineCode}</code>
+		<code style={`--nta-color-bg-inline-code:var(${codeBg})`}>{labels.inlineCode}</code>
 	</p>
 	<Palette {light} />
 </div>
@@ -32,15 +32,15 @@ const codeBg = light ? '--sl-color-gray-6' : '--sl-color-gray-5';
 <style>
 	.preview-card {
 		margin: 0 !important;
-		border: 1px solid var(--sl-color-gray-5);
+		border: 1px solid var(--nta-color-gray-5);
 		padding: 1rem;
-		background-color: var(--sl-color-black);
+		background-color: var(--nta-color-black);
 	}
 
 	p {
 		margin-top: 0.5em !important;
-		font-size: var(--sl-text-sm);
-		color: var(--sl-color-gray-2);
+		font-size: var(--nta-text-sm);
+		color: var(--nta-color-gray-2);
 	}
 
 	.link {
@@ -48,6 +48,6 @@ const codeBg = light ? '--sl-color-gray-6' : '--sl-color-gray-5';
 	}
 
 	.dim {
-		color: var(--sl-color-gray-3);
+		color: var(--nta-color-gray-3);
 	}
 </style>

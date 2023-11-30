@@ -1,0 +1,59 @@
+---
+import type { Props } from '../props';
+
+import { TableOfContents, MobileTableOfContents } from 'virtual:astronauta/components';
+---
+
+{
+	Astro.props.toc && (
+		<>
+			<div class="lg:nta-hidden">
+				<MobileTableOfContents {...Astro.props} />
+			</div>
+			<div class="right-sidebar-panel nta-hidden lg:nta-block">
+				<div class="sl-container">
+					<TableOfContents {...Astro.props} />
+				</div>
+			</div>
+		</>
+	)
+}
+
+<style>
+	.right-sidebar-panel {
+		padding: 1rem var(--nta-sidebar-pad-x);
+	}
+	.nta-container {
+		width: calc(var(--nta-sidebar-width) - 2 * var(--nta-sidebar-pad-x));
+	}
+	.right-sidebar-panel :global(h2) {
+		color: hsl(var(--nta-foreground));
+		font-size: var(--nta-text-base);
+		font-weight: 500;
+		line-height: var(--nta-line-height-headings);
+		margin: 1rem 0;
+	}
+	.right-sidebar-panel :global(a) {
+		display: block;
+		font-size: var(--nta-text-sm);
+		text-decoration: none;
+		color: hsl(var(--nta-secondary-foreground));
+		overflow-wrap: anywhere;
+		font-weight: 500;
+	}
+	.right-sidebar-panel :global(a:hover) {
+		color: hsl(var(--nta-foreground));
+	}
+	@media (min-width: 72rem) {
+		.nta-container {
+			max-width: calc(
+				(
+					(
+							100vw - var(--nta-sidebar-width) - 2 * var(--nta-content-pad-x) - 2 *
+								var(--nta-sidebar-pad-x)
+						) * 0.25 /* MAGIC NUMBER 🥲 */
+				)
+			);
+		}
+	}
+</style>

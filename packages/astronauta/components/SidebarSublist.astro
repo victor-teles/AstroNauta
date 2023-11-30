@@ -1,0 +1,117 @@
+---
+import { type SidebarEntry } from '../utils/navigation';
+import Badge from './Badge.astro';
+
+interface Props {
+	sublist: SidebarEntry[];
+	nested?: boolean;
+}
+---
+
+<ul class:list={{ 'top-level': !Astro.props.nested }}>
+	{
+		Astro.props.sublist.map((entry) => (
+			<li>
+				{entry.type === 'link' ? (
+					<a
+						href={entry.href}
+						aria-current={entry.isCurrent && 'page'}
+						class:list={[{ large: !Astro.props.nested }, entry.attrs.class]}
+						{...entry.attrs}
+					>
+						<span>{entry.label}</span>
+						{entry.badge && (
+							<>
+								{' '}
+								<Badge
+									text={entry.badge.text}
+									variant={entry.isCurrent ? 'outline' : entry.badge.variant}
+								/>
+							</>
+						)}
+					</a>
+				) : (
+					<div class="menu-group">
+						<span class="group">{entry.label}</span>
+						<Astro.self sublist={entry.entries} nested />
+					</div>
+				)}
+			</li>
+		))
+	}
+</ul>
+
+<style>
+	ul {
+		--nta-sidebar-item-padding-inline: 1rem;
+		--nta-sidebar-secondary-hover: hsl(61 13% 91% / 5%);
+		list-style: none;
+		padding: 0;
+	}
+	:root[data-theme='light'] ul{
+		--nta-sidebar-secondary-hover: hsl(60 14% 34% / 5%);
+	}
+
+	li {
+		overflow-wrap: anywhere;
+	}
+
+	.group {
+		font-size: var(--nta-text-sm);
+		font-weight: 500;
+		color: var(--nta-foreground);
+	}
+
+	.top-level > li + li {
+		margin-top: 0.75rem;
+	}
+
+	.menu-group {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		justify-content: space-between;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	.menu-group > span {
+		padding: 0.5em var(--nta-sidebar-item-padding-inline);
+	}
+
+	a {
+		display: block;
+		border-radius: 0.25rem;
+		text-decoration: none;
+		color: hsl(var(--nta-secondary-foreground));
+		padding: 0.4rem var(--nta-sidebar-item-padding-inline);
+		line-height: 1.4;
+	}
+
+	a:hover,
+	a:focus {
+		color: hsl(var(--nta-foreground));
+		background-color: var(--nta-sidebar-secondary-hover);
+	}
+
+	[aria-current='page'],
+	[aria-current='page']:hover,
+	[aria-current='page']:focus {
+		font-weight: 500;
+		color: hsl(var(--nta-primary));
+		background-color: hsl(var(--nta-primary)/10%);
+	}
+
+	a > *:not(:last-child) {
+		margin-inline-end: 0.25em;
+	}
+
+	@media (min-width: 50rem) {
+		.top-level > li + li {
+			margin-top: 0.5rem;
+		}
+		a {
+			font-size: var(--nta-text-sm);
+		}
+	}
+</style>

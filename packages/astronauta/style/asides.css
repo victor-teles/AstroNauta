@@ -1,0 +1,49 @@
+.starlight-aside {
+	padding: 1rem;
+	border-inline-start: 0.25rem solid;
+	color: var(--nta-color-white);
+}
+.starlight-aside--note {
+	--nta-color-asides-text-accent: var(--nta-color-blue-high);
+	border-color: var(--nta-color-blue);
+	background-color: var(--nta-color-blue-low);
+}
+.starlight-aside--tip {
+	--nta-color-asides-text-accent: var(--nta-color-purple-high);
+	border-color: var(--nta-color-purple);
+	background-color: var(--nta-color-purple-low);
+}
+.starlight-aside--caution {
+	--nta-color-asides-text-accent: var(--nta-color-orange-high);
+	border-color: var(--nta-color-orange);
+	background-color: var(--nta-color-orange-low);
+}
+.starlight-aside--danger {
+	--nta-color-asides-text-accent: var(--nta-color-red-high);
+	border-color: var(--nta-color-red);
+	background-color: var(--nta-color-red-low);
+}
+
+.starlight-aside__title {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	font-size: var(--nta-text-h5);
+	font-weight: 600;
+	line-height: var(--nta-line-height-headings);
+	color: var(--nta-color-asides-text-accent);
+}
+
+.starlight-aside__icon {
+	font-size: 1.333em;
+	width: 1em;
+	height: 1em;
+}
+
+.starlight-aside__title + .starlight-aside__content {
+	margin-top: 0.5rem;
+}
+
+.starlight-aside__content a {
+	color: var(--nta-color-asides-text-accent);
+}

@@ -1,0 +1,97 @@
+---
+import type { Props } from '../props';
+import { useTranslations } from '../utils/translations';
+
+import { MobileMenuToggle } from 'virtual:astronauta/components';
+
+const { hasSidebar, locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<div class="page nta-flex">
+	<header class="header"><slot name="header" /></header>
+	{
+		hasSidebar && (
+			<nav class="sidebar" aria-label={t('sidebarNav.accessibleLabel')}>
+				<MobileMenuToggle {...Astro.props} />
+				<div id="starlight__sidebar" class="sidebar-pane">
+					<div class="sidebar-content nta-flex">
+						<slot name="sidebar" />
+					</div>
+				</div>
+			</nav>
+		)
+	}
+	<div class="main-frame"><slot /></div>
+</div>
+
+<style>
+	.page {
+		flex-direction: column;
+		min-height: 100vh;
+		background-color: hsl(var(--nta-background));
+	}
+
+	.header {
+		z-index: var(--nta-z-index-navbar);
+		position: fixed;
+		inset-inline-start: 0;
+		inset-block-start: 0;
+		width: 100%;
+		height: var(--nta-nav-height);
+		border-bottom: 1px solid hsl(var(--nta-border));
+		padding: var(--nta-nav-pad-y) var(--nta-nav-pad-x);
+		padding-inline-end: var(--nta-nav-pad-x);
+		background: hsla(var(--nta-background) / 0.6);
+		backdrop-filter: blur(4px);
+	}
+
+	:global([data-has-sidebar]) .header {
+		padding-inline-end: calc(var(--nta-nav-gap) + var(--nta-nav-pad-x) + var(--nta-menu-button-size));
+	}
+
+	.sidebar-pane {
+		visibility: var(--nta-sidebar-visibility, hidden);
+		position: fixed;
+		z-index: var(--nta-z-index-menu);
+		inset-block: 0;
+		inset-inline-start: 0;
+		padding-top: var(--nta-nav-height);
+		width: 100%;
+		overflow-y: auto;
+	}
+
+	:global([aria-expanded='true']) ~ .sidebar-pane {
+		--nta-sidebar-visibility: visible;
+	}
+
+	.sidebar-content {
+		height: 100%;
+		min-height: max-content;
+		padding: 1rem var(--nta-sidebar-pad-x) 0;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	@media (min-width: 50rem) {
+		.sidebar-content::after {
+			content: '';
+			padding-bottom: 1px;
+		}
+	}
+
+	.main-frame {
+		padding-top: calc(var(--nta-nav-height) + var(--nta-mobile-toc-height));
+		padding-inline-start: var(--nta-content-inline-start);
+	}
+
+	@media (min-width: 50rem) {
+		:global([data-has-sidebar]) .header {
+			padding-inline-end: var(--nta-nav-pad-x);
+		}
+		.sidebar-pane {
+			--nta-sidebar-visibility: visible;
+			width: var(--nta-sidebar-width);
+		}
+	}
+</style>

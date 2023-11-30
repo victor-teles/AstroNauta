@@ -1,0 +1,29 @@
+---
+import Icon from '../user-components/Icon.astro';
+
+interface Props {
+	icon: Parameters<typeof Icon>[0]['name'];
+	width?: string;
+	class?: string;
+	id?: string;
+	type?: 'outline' | 'solid';
+}
+
+const { type = 'solid' } = Astro.props;
+---
+
+<button class={`nta-icon-button ${Astro.props.class ?? ''}`} id={Astro.props.id}>
+	<Icon name={Astro.props.icon} class="icon" type={type} />
+</button>
+
+<style>
+	button {
+		border-radius: 0.5rem;
+		padding: 0.5rem;
+	}
+
+	button:hover {
+		background-color: hsl(var(--nta-accent));
+		cursor: pointer;
+	}
+</style>

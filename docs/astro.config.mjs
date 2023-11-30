@@ -1,19 +1,9 @@
 import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
+import astronauta from '@astronauta/docs';
 
 export const locales = {
 	root: { label: 'English', lang: 'en' },
-	de: { label: 'Deutsch', lang: 'de' },
-	es: { label: 'Español', lang: 'es' },
-	ja: { label: '日本語', lang: 'ja' },
-	fr: { label: 'Français', lang: 'fr' },
-	it: { label: 'Italiano', lang: 'it' },
-	id: { label: 'Bahasa Indonesia', lang: 'id' },
-	'zh-cn': { label: '简体中文', lang: 'zh-CN' },
 	'pt-br': { label: 'Português do Brasil', lang: 'pt-BR' },
-	ko: { label: '한국어', lang: 'ko' },
-	tr: { label: 'Türkçe', lang: 'tr' },
-	ru: { label: 'Русский', lang: 'ru' },
 };
 
 const site = 'https://starlight.astro.build/';
@@ -21,8 +11,8 @@ const site = 'https://starlight.astro.build/';
 export default defineConfig({
 	site,
 	integrations: [
-		starlight({
-			title: 'Starlight',
+		astronauta({
+			title: 'Astronauta',
 			logo: {
 				light: '/src/assets/logo-light.svg',
 				dark: '/src/assets/logo-dark.svg',
@@ -31,19 +21,17 @@ export default defineConfig({
 			editLink: {
 				baseUrl: 'https://github.com/withastro/starlight/edit/main/docs/',
 			},
+			header: {
+				links:[
+					{ href: 'https://localhost.com', title: 'Login' },
+					{ href: 'https://localhost.com', title: 'Documentation' },
+				]
+			},
 			social: {
 				github: 'https://github.com/withastro/starlight',
 				discord: 'https://astro.build/chat',
 			},
 			head: [
-				{
-					tag: 'script',
-					attrs: {
-						src: 'https://cdn.usefathom.com/script.js',
-						'data-site': 'EZBHTSIG',
-						defer: true,
-					},
-				},
 				{
 					tag: 'meta',
 					attrs: { property: 'og:image', content: site + 'og.jpg?v=1' },
@@ -176,6 +164,6 @@ export default defineConfig({
 				},
 			],
 			lastUpdated: true,
-		}),
+		})
 	],
 });

@@ -1,0 +1,65 @@
+---
+import { logos } from 'virtual:astronauta/user-images';
+import config from 'virtual:astronauta/user-config';
+import { pathWithBase } from '../utils/base';
+import type { Props } from '../props';
+
+const href = pathWithBase(Astro.props.locale || '/');
+---
+
+<a {href} class="site-title nta-flex">
+	{
+		config.logo && logos.dark && (
+			<>
+				<img
+					class:list={{ 'dark-only': !('src' in config.logo) }}
+					alt={config.logo.alt}
+					src={logos.dark.src}
+					width={logos.dark.width}
+					height={logos.dark.height}
+				/>
+				{/* Show light alternate if a user configure both light and dark logos. */}
+				{!('src' in config.logo) && (
+					<img
+						class="light-only"
+						alt={config.logo.alt}
+						src={logos.light?.src}
+						width={logos.light?.width}
+						height={logos.light?.height}
+					/>
+				)}
+			</>
+		)
+	}
+	<span class:list={{ 'sr-only': config.logo?.replacesTitle }}>
+		{config.title}
+	</span>
+</a>
+
+<style>
+	.site-title {
+		justify-self: flex-start;
+		max-width: 100%;
+		overflow: hidden;
+		align-items: center;
+		gap: var(--nta-nav-gap);
+		font-size: var(--nta-text-h4);
+		font-weight: 600;
+		color: var(--nta-color-text-accent);
+		text-decoration: none;
+		white-space: nowrap;
+	}
+	img {
+		height: calc(var(--nta-nav-height) - 2 * var(--nta-nav-pad-y));
+		width: auto;
+		max-width: 100%;
+		object-fit: contain;
+		object-position: 0 50%;
+	}
+	:global([data-theme='light']) .dark-only {
+		display: none;
+	}
+	:global([data-theme='dark']) .light-only {
+		display: none;
+	}
+</style>

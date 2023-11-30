@@ -1,0 +1,22 @@
+---
+import { PAGE_TITLE_ID } from '../constants';
+import type { Props } from '../props';
+---
+
+<h1 id={PAGE_TITLE_ID}>{Astro.props.entry.data.title}</h1>
+<p>{Astro.props.entry.data.description}</p>
+
+<style>
+	h1 {
+		margin-top: 1rem;
+		font-size: var(--nta-text-h1);
+		line-height: var(--nta-line-height-headings);
+		font-weight: 800;
+		color: hsl(var(--nta-foreground));
+	}
+	p {
+		color: hsl(var(--nta-markdown-paragraph));
+		font-size: var(--nta-text-lg);
+		margin-top: 0.5rem;
+	}
+</style>

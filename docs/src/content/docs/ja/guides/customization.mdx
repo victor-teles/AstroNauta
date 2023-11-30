@@ -3,7 +3,7 @@ title: Starlightのカスタマイズ
 description: Starlightサイトをカスタマイズして、ロゴ、カスタムフォント、ランディングページのデザインなどを追加する方法について学びます。
 ---
 
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astronauta/docs/components';
 import FileTree from '../../../../components/file-tree.astro';
 
 Starlightには標準的なスタイルと機能がデフォルトで用意されているため、設定不要ですぐに使い始めることができますが、Starlightサイトの見た目をカスタマイズしたくなった場合は、このガイドを参照してください。
@@ -387,13 +387,13 @@ Starlightサイトにカスタムフォントを追加する必要がある場�
 
 ### フォントを使う
 
-設定したフォントをサイトに適用するには、選択したフォントの名前を[カスタムCSSファイル](/ja/guides/css-and-tailwind/#カスタムcssスタイル)で指定します。たとえば、Starlightのデフォルトフォントをすべての場所で上書きするには、`--sl-font`カスタムプロパティを設定します。
+設定したフォントをサイトに適用するには、選択したフォントの名前を[カスタムCSSファイル](/ja/guides/css-and-tailwind/#カスタムcssスタイル)で指定します。たとえば、Starlightのデフォルトフォントをすべての場所で上書きするには、`--nta-font`カスタムプロパティを設定します。
 
 ```css
 /* src/styles/custom.css */
 
 :root {
-	--sl-font: 'IBM Plex Serif', serif;
+	--nta-font: 'IBM Plex Serif', serif;
 }
 ```
 

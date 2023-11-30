@@ -1,0 +1,15 @@
+---
+import type { Props } from '../props';
+
+import { MobileMenuFooter } from 'virtual:astronauta/components';
+import SidebarSublist from './SidebarSublist.astro';
+import Search from './Search.astro';
+
+const { sidebar } = Astro.props;
+---
+<Search {...Astro.props} />
+
+<SidebarSublist sublist={sidebar} />
+<div class="md:nta-hidden">
+	<MobileMenuFooter {...Astro.props} />
+</div>

@@ -66,7 +66,7 @@ Contoh di bawah ini menunjukkan sebuah komponen custom yang merender tautan e-ma
 ---
 // src/components/EmailLink.astro
 import type { Props } from '@astrojs/starlight/props';
-import Default from '@astrojs/starlight/components/SocialIcons.astro';
+import Default from '@astronauta/docs/components/SocialIcons.astro';
 ---
 
 <a href="mailto:houston@example.com">Kirim email ke Saya</a>
@@ -113,7 +113,7 @@ Pada contoh berikut, sebuah komponen yang menggantikan [`Footer`](/id/reference/
 ---
 // src/components/ConditionalFooter.astro
 import type { Props } from '@astrojs/starlight/props';
-import Default from '@astrojs/starlight/components/Footer.astro';
+import Default from '@astronauta/docs/components/Footer.astro';
 
 const isHomepage = Astro.props.slug === '';
 ---

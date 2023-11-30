@@ -1,5 +1,5 @@
 ---
-import { TabItem, Tabs } from '@astrojs/starlight/components';
+import { TabItem, Tabs } from '@astronauta/docs/components';
 import ColorEditor, { Props as EditorProps } from './theme-designer/color-editor.astro';
 import Presets, { Props as PresetsProps } from './theme-designer/presets.astro';
 import Preview from './theme-designer/preview.astro';
@@ -23,7 +23,7 @@ const {
 
 <div>
 	<theme-designer>
-		<div class="sl-flex controls not-content">
+		<div class="nta-flex controls not-content">
 			<ColorEditor key="accent" legend={editor.accentColor} labels={editor} />
 			<ColorEditor key="gray" legend={editor.grayColor} labels={editor} />
 		</div>
@@ -38,13 +38,13 @@ const {
 				<slot name="css-docs" />
 				<pre
 					class="generated-code"
-					tabindex="0"><code style="background-color: var(--astro-code-color-background);color: var(--sl-color-text)" data-theme-css /></pre>
+					tabindex="0"><code style="background-color: var(--astro-code-color-background);color: var(--nta-color-text)" data-theme-css /></pre>
 			</TabItem>
 			<TabItem label="Tailwind">
 				<slot name="tailwind-docs" />
 				<pre
 					class="generated-code"
-					tabindex="0"><code style="background-color: var(--astro-code-color-background);color: var(--sl-color-text)" data-theme-tailwind /></pre>
+					tabindex="0"><code style="background-color: var(--astro-code-color-background);color: var(--nta-color-text)" data-theme-tailwind /></pre>
 			</TabItem>
 		</Tabs>
 	</theme-designer>
@@ -80,7 +80,7 @@ const {
 			previews.forEach((preview) => {
 				const theme = 'dark' in preview.dataset ? dark : light;
 				Object.entries(theme).forEach(([key, color]) => {
-					preview.style.setProperty(`--sl-color-${key}`, color);
+					preview.style.setProperty(`--nta-color-${key}`, color);
 				});
 			});
 		}
@@ -88,7 +88,7 @@ const {
 		/** Convert a color palette into a string of CSS rules. */
 		#paletteToRules(palette: ReturnType<typeof getPalettes>['dark' | 'light']) {
 			return Object.entries(palette)
-				.map(([key, color]) => `--sl-color-${key}: ${color};`)
+				.map(([key, color]) => `--nta-color-${key}: ${color};`)
 				.join('\n\t');
 		}
 

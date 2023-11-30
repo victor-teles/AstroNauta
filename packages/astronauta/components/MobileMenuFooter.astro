@@ -1,0 +1,17 @@
+---
+import { LanguageSelect, ThemeToggle } from 'virtual:astronauta/components';
+import type { Props } from '../props';
+---
+
+<div class="mobile-preferences nta-flex">
+	<ThemeToggle {...Astro.props} />
+	<LanguageSelect {...Astro.props} />
+</div>
+
+<style>
+	.mobile-preferences {
+		justify-content: space-between;
+		border-top: 1px solid var(--nta-color-gray-6);
+		padding: 0.5rem 0;
+	}
+</style>

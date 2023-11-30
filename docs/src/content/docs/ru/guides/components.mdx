@@ -53,17 +53,17 @@ Starlight применяет стандартные стили к вашему �
 ## Встроенные компоненты
 
 Starlight предоставляет встроенные компоненты для частых случаев, нужных в документации.
-Эти компоненты доступны из пакета `@astrojs/starlight/components`.
+Эти компоненты доступны из пакета `@astronauta/docs/components`.
 
 ### Вкладки
 
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astronauta/docs/components';
 
 Вы можете отобразить интерфейс с вкладками, используя компоненты `<Tabs>` и `<TabItem>`.
 Каждый компонент `<TabItem>` должен иметь `label` для отображения пользователям.
 
 ```mdx
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astronauta/docs/components';
 
 <Tabs>
 	<TabItem label="Звезды">Сириус, Вега, Бетельгейзе</TabItem>
@@ -80,7 +80,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 ### Карточки
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astronauta/docs/components';
 
 Вы можете отображать контент в блоке, со стилями Starlight, используя компонент `<Card>`.
 Оберните несколько карточек в компонент `<CardGrid>`, чтобы отображать карточки рядом, когда есть достаточно места.
@@ -88,7 +88,7 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 `<Card>` требует `title` и может дополнительно включать атрибут `icon`, установленный как название [одного из встроенных иконок Starlight](#все-иконки).
 
 ```mdx
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astronauta/docs/components';
 
 <Card title="Зацени">Интересный контент, который вы хотите подсветить.</Card>
 
@@ -137,7 +137,7 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 Группируйте несколько компонентов `<LinkCard>` в `<CardGrid>`, чтобы отображать карточки рядом, когда есть достаточно места.
 
 ```mdx
-import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import { LinkCard, CardGrid } from '@astronauta/docs/components';
 
 <LinkCard
 	title="Кастомизация Starlight"
@@ -156,7 +156,7 @@ import { LinkCard, CardGrid } from '@astrojs/starlight/components';
 
 Вышеуказанный код генерирует следующее на странице:
 
-import { LinkCard } from '@astrojs/starlight/components';
+import { LinkCard } from '@astronauta/docs/components';
 
 <LinkCard
 	title="Кастомизация Starlight"
@@ -174,7 +174,7 @@ import { LinkCard } from '@astrojs/starlight/components';
 
 ### Иконки
 
-import { Icon } from '@astrojs/starlight/components';
+import { Icon } from '@astronauta/docs/components';
 import IconsList from '../../../../components/icons-list.astro';
 
 Starlight предоставляет набор общих иконок, которые вы можете отображать в своем контенте, используя компонент `<Icon>`.
@@ -182,7 +182,7 @@ Starlight предоставляет набор общих иконок, кот�
 Каждый `<Icon>` требует атрибут [`name`](#все-иконки) и по желанию может включать атрибуты `label`, `size` и `color`.
 
 ```mdx
-import { Icon } from '@astrojs/starlight/components';
+import { Icon } from '@astronauta/docs/components';
 
 <Icon name="star" color="goldenrod" size="2rem" />
 ```

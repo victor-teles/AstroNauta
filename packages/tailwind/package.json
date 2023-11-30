@@ -1,16 +1,15 @@
 {
-  "name": "@astrojs/starlight-tailwind",
-  "version": "2.0.0",
-  "description": "Tailwind CSS plugin for the Starlight documentation theme for Astro",
-  "author": "Chris Swithinbank <swithinbank@gmail.com>",
+  "name": "@astronauta/tailwind",
+  "version": "1.0.0",
+  "description": "Tailwind CSS plugin for the Astronauta documentation theme for Astro",
+  "author": "Victor Teles <contato@victormesquita.dev>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/withastro/starlight",
+    "url": "https://github.com/victor-teles/AstroNauta",
     "directory": "packages/tailwind"
   },
-  "bugs": "https://github.com/withastro/starlight/issues",
-  "homepage": "https://starlight.astro.build",
+  "bugs": "https://github.com/victor-teles/AstroNauta/issues",
   "type": "module",
   "files": [
     "index.ts"
@@ -28,7 +27,7 @@
     "vitest": "^0.33.0"
   },
   "peerDependencies": {
-    "@astrojs/starlight": ">=0.9.0",
+    "@astronauta/docs": ">=0.9.0",
     "@astrojs/tailwind": "^5.0.0",
     "tailwindcss": "^3.3.3"
   }

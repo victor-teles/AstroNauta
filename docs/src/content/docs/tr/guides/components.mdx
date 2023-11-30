@@ -51,18 +51,18 @@ Bu stiller bileşeninizin görünümü ile çakışıyorsa, bileşeninizde stili
 ## Yerleşik Bileşenler
 
 Starlight bazı yerleşik bileşenleri ortak dokümantasyon ihtiyaçları için sunar.
-Bu bileşenler `@astrojs/starlight/components` paketinde mevcuttur.
+Bu bileşenler `@astronauta/docs/components` paketinde mevcuttur.
 
 ### Sekmeler
 
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astronauta/docs/components';
 
 `<Tabs>` ve `<TabItem>` bileşenlerini kullanarak sekmeli arayüz gösterebilirsiniz.
 You can display a tabbed interface using the `<Tabs>` and `<TabItem>` components.
 Her `<TabItem>` bileşenini kullanıcılara göstermek için `label` sahibi olması zorunludur.
 
 ```mdx
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astronauta/docs/components';
 
 <Tabs>
 	<TabItem label="Yıldızlar">Sirius, Vega, Betelgeuse</TabItem>
@@ -79,7 +79,7 @@ Yukarıdaki kod, sayfa üzerinde aşağıdaki gibi sekmeler oluşturur:
 
 ### Kartlar
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astronauta/docs/components';
 
 `<Card>` bileşenini kullanarak Starlight'ın stiline uyan kutu içerisinde yer alan içeriği gösterebilirsiniz.
 Birden fazla kartı `<CardGrid>` bileşeni içinde, yeteri kadar boşluk olduğu zaman kartları yan yana sıralı olarak göstermek için sarmalayın.
@@ -87,7 +87,7 @@ Birden fazla kartı `<CardGrid>` bileşeni içinde, yeteri kadar boşluk olduğu
 `<Card>` bileşeni `title` değerine ihtiyaç duyar ve opsiyonel olarak [Starlight'ın kurulu ikonlarından birinin](#all-icons) ismini taşıyan `icon` özelliğini içerebilir.
 
 ```mdx
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astronauta/docs/components';
 
 <Card title="Buna bir bakın.">Vurgulamak istediğin ilgi çekici içerik</Card>
 
@@ -135,7 +135,7 @@ Belirgin olarak farklı sayfalara bağlantı eklemek için `<LinkCard>` bileşen
 Birden fazla `<LinkCard>` bileşeninizi, yeterince boşluk olduğunda yan yana olacak şekilde göstermek için `<CardGrid>` içerisinde gruplayın.
 
 ```mdx
-import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import { LinkCard, CardGrid } from '@astronauta/docs/components';
 
 <LinkCard
 	title="Starlight'ı Özelleştirmek"
@@ -151,7 +151,7 @@ import { LinkCard, CardGrid } from '@astrojs/starlight/components';
 
 Yukarıdaki kod, sayfa üzerinde aşağıdaki gibi çıktı oluşturur.
 
-import { LinkCard } from '@astrojs/starlight/components';
+import { LinkCard } from '@astronauta/docs/components';
 
 <LinkCard
 	title="Starlight'ı Özelleştirmek"
@@ -166,14 +166,14 @@ import { LinkCard } from '@astrojs/starlight/components';
 
 ### İkon
 
-import { Icon } from '@astrojs/starlight/components';
+import { Icon } from '@astronauta/docs/components';
 import IconsList from '../../../../components/icons-list.astro';
 
 Starlight, içeriğinizde görünmesi için `<Icon>` bileşenini kullanarak bir grup ortak ikonları kullanımınıza sunar.
 Her `<Icon>` [`name`](#all-icons) değerine ihtiyaç duyar ve isteğe bağlı olarak `label`, `size`, ve `color` özellikleri eklenebilir.
 
 ```mdx
-import { Icon } from '@astrojs/starlight/components';
+import { Icon } from '@astronauta/docs/components';
 
 <Icon name="star" color="goldenrod" size="2rem" />
 ```

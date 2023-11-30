@@ -1,5 +1,5 @@
 {
-  "name": "starlight-root",
+  "name": "astronauta",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -7,7 +7,8 @@
     "build:examples": "pnpm --filter '@example/*' build",
     "size": "size-limit",
     "version": "pnpm changeset version && pnpm i --no-frozen-lockfile",
-    "format": "prettier -w --cache --plugin prettier-plugin-astro ."
+    "format": "prettier -w --cache --plugin prettier-plugin-astro .",
+    "dev": "cd docs && pnpm dev"
   },
   "license": "MIT",
   "devDependencies": {

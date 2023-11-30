@@ -1,5 +1,5 @@
 ---
-import { Icon } from '@astrojs/starlight/components';
+import { Icon } from '@astronauta/docs/components';
 import { Icons } from '../../../packages/starlight/components/Icons';
 
 const icons = Object.keys(Icons) as (keyof typeof Icons)[];
@@ -48,10 +48,10 @@ const icons = Object.keys(Icons) as (keyof typeof Icons)[];
 		align-items: center;
 		justify-content: center;
 		text-align: center;
-		border: 1px solid var(--sl-color-gray-5);
+		border: 1px solid var(--nta-color-gray-5);
 		display: flex;
 		flex-direction: column;
-		font-size: var(--sl-text-sm);
+		font-size: var(--nta-text-sm);
 		gap: 0.25rem;
 		margin: 0;
 		padding: 0.75rem;
@@ -61,7 +61,7 @@ const icons = Object.keys(Icons) as (keyof typeof Icons)[];
 	.icon-preview:hover,
 	.icon-preview:focus {
 		cursor: pointer;
-		border: 1px solid var(--sl-color-gray-3);
-		background: var(--sl-color-gray-7, var(--sl-color-gray-6));
+		border: 1px solid var(--nta-color-gray-3);
+		background: var(--nta-color-gray-7, var(--nta-color-gray-6));
 	}
 </style>

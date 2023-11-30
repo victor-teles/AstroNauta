@@ -39,40 +39,40 @@ describe('@tailwind base;', async () => {
 		    --tw-content: ;
 		}
 		:root {
-		    --sl-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, \\"Helvetica Neue\\", Arial, \\"Noto Sans\\", sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\", \\"Noto Color Emoji\\";
-		    --sl-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \\"Liberation Mono\\", \\"Courier New\\", monospace;
-		    --sl-color-white: #fff;
-		    --sl-color-gray-1: #e5e7eb;
-		    --sl-color-gray-2: #d1d5db;
-		    --sl-color-gray-3: #9ca3af;
-		    --sl-color-gray-4: #4b5563;
-		    --sl-color-gray-5: #374151;
-		    --sl-color-gray-6: #1f2937;
-		    --sl-color-black: #111827;
-		    --sl-color-accent-low: #1e1b4b;
-		    --sl-color-accent: #4f46e5;
-		    --sl-color-accent-high: #c7d2fe;
+		    --nta-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, \\"Helvetica Neue\\", Arial, \\"Noto Sans\\", sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\", \\"Noto Color Emoji\\";
+		    --nta-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \\"Liberation Mono\\", \\"Courier New\\", monospace;
+		    --nta-color-white: #fff;
+		    --nta-color-gray-1: #e5e7eb;
+		    --nta-color-gray-2: #d1d5db;
+		    --nta-color-gray-3: #9ca3af;
+		    --nta-color-gray-4: #4b5563;
+		    --nta-color-gray-5: #374151;
+		    --nta-color-gray-6: #1f2937;
+		    --nta-color-black: #111827;
+		    --nta-color-accent-low: #1e1b4b;
+		    --nta-color-accent: #4f46e5;
+		    --nta-color-accent-high: #c7d2fe;
 		}
 		:root[data-theme=\\"light\\"] {
-		    --sl-color-white: #111827;
-		    --sl-color-gray-1: #1f2937;
-		    --sl-color-gray-2: #374151;
-		    --sl-color-gray-3: #6b7280;
-		    --sl-color-gray-4: #9ca3af;
-		    --sl-color-gray-5: #d1d5db;
-		    --sl-color-gray-6: #e5e7eb;
-		    --sl-color-gray-7: #f3f4f6;
-		    --sl-color-black: #fff;
-		    --sl-color-accent-low: #c7d2fe;
-		    --sl-color-accent: #4f46e5;
-		    --sl-color-accent-high: #312e81;
+		    --nta-color-white: #111827;
+		    --nta-color-gray-1: #1f2937;
+		    --nta-color-gray-2: #374151;
+		    --nta-color-gray-3: #6b7280;
+		    --nta-color-gray-4: #9ca3af;
+		    --nta-color-gray-5: #d1d5db;
+		    --nta-color-gray-6: #e5e7eb;
+		    --nta-color-gray-7: #f3f4f6;
+		    --nta-color-black: #fff;
+		    --nta-color-accent-low: #c7d2fe;
+		    --nta-color-accent: #4f46e5;
+		    --nta-color-accent-high: #312e81;
 		}"
 	`);
 	});
 
-	test('configures `--sl-color-*` variables', () => {
-		expect(base).includes('--sl-color-gray-1: #e5e7eb;');
-		expect(base).includes('--sl-color-accent: #4f46e5;');
+	test('configures `--nta-color-*` variables', () => {
+		expect(base).includes('--nta-color-gray-1: #e5e7eb;');
+		expect(base).includes('--nta-color-accent: #4f46e5;');
 	});
 
 	describe('with user theme config', async () => {
@@ -88,8 +88,8 @@ describe('@tailwind base;', async () => {
 		});
 
 		test('uses theme values for Starlight colours', () => {
-			expect(baseWithConfig).includes('--sl-color-gray-1: #e2e8f0;');
-			expect(baseWithConfig).includes('--sl-color-accent: #d97706;');
+			expect(baseWithConfig).includes('--nta-color-gray-1: #e2e8f0;');
+			expect(baseWithConfig).includes('--nta-color-accent: #d97706;');
 		});
 	});
 
@@ -107,33 +107,33 @@ describe('@tailwind base;', async () => {
 			    --tw-content: ;
 			}
 			:root {
-			    --sl-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, \\"Helvetica Neue\\", Arial, \\"Noto Sans\\", sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\", \\"Noto Color Emoji\\";
-			    --sl-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \\"Liberation Mono\\", \\"Courier New\\", monospace;
-			    --sl-color-white: #fff;
-			    --sl-color-gray-1: #e5e7eb;
-			    --sl-color-gray-2: #d1d5db;
-			    --sl-color-gray-3: #9ca3af;
-			    --sl-color-gray-4: #4b5563;
-			    --sl-color-gray-5: #374151;
-			    --sl-color-gray-6: #1f2937;
-			    --sl-color-black: #111827;
-			    --sl-color-accent-low: #1e1b4b;
-			    --sl-color-accent: #4f46e5;
-			    --sl-color-accent-high: #c7d2fe;
+			    --nta-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, \\"Helvetica Neue\\", Arial, \\"Noto Sans\\", sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\", \\"Noto Color Emoji\\";
+			    --nta-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \\"Liberation Mono\\", \\"Courier New\\", monospace;
+			    --nta-color-white: #fff;
+			    --nta-color-gray-1: #e5e7eb;
+			    --nta-color-gray-2: #d1d5db;
+			    --nta-color-gray-3: #9ca3af;
+			    --nta-color-gray-4: #4b5563;
+			    --nta-color-gray-5: #374151;
+			    --nta-color-gray-6: #1f2937;
+			    --nta-color-black: #111827;
+			    --nta-color-accent-low: #1e1b4b;
+			    --nta-color-accent: #4f46e5;
+			    --nta-color-accent-high: #c7d2fe;
 			}
 			:root[data-theme=\\"light\\"] {
-			    --sl-color-white: #111827;
-			    --sl-color-gray-1: #1f2937;
-			    --sl-color-gray-2: #374151;
-			    --sl-color-gray-3: #6b7280;
-			    --sl-color-gray-4: #9ca3af;
-			    --sl-color-gray-5: #d1d5db;
-			    --sl-color-gray-6: #e5e7eb;
-			    --sl-color-gray-7: #f3f4f6;
-			    --sl-color-black: #fff;
-			    --sl-color-accent-low: #c7d2fe;
-			    --sl-color-accent: #4f46e5;
-			    --sl-color-accent-high: #312e81;
+			    --nta-color-white: #111827;
+			    --nta-color-gray-1: #1f2937;
+			    --nta-color-gray-2: #374151;
+			    --nta-color-gray-3: #6b7280;
+			    --nta-color-gray-4: #9ca3af;
+			    --nta-color-gray-5: #d1d5db;
+			    --nta-color-gray-6: #e5e7eb;
+			    --nta-color-gray-7: #f3f4f6;
+			    --nta-color-black: #fff;
+			    --nta-color-accent-low: #c7d2fe;
+			    --nta-color-accent: #4f46e5;
+			    --nta-color-accent-high: #312e81;
 			}
 			*, ::before, ::after {
 			    --tw-border-spacing-x: 0;

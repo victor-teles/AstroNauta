@@ -13,9 +13,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "workspace:*",
+    "@astronauta/docs": "workspace:*",
     "@types/culori": "^2.0.0",
-    "astro": "^3.2.3",
+    "astro": "^3.2.4",
     "culori": "^3.2.0",
     "sharp": "^0.32.5"
   },
