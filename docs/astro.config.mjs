@@ -22,10 +22,10 @@ export default defineConfig({
 				baseUrl: 'https://github.com/withastro/starlight/edit/main/docs/',
 			},
 			header: {
-				links:[
+				links: [
 					{ href: 'https://localhost.com', title: 'Login' },
 					{ href: 'https://localhost.com', title: 'Documentation' },
-				]
+				],
 			},
 			social: {
 				github: 'https://github.com/withastro/starlight',
@@ -164,6 +164,6 @@ export default defineConfig({
 				},
 			],
 			lastUpdated: true,
-		})
+		}),
 	],
 });

@@ -4,4 +4,4 @@ declare global {
 	};
 }
 
-export default global
+export default global;

@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 	border-width: 0;
 	border-style: solid;
-	border-color: hsl(var(--nta-border))
+	border-color: hsl(var(--nta-border));
 }
 
 * {
@@ -12,7 +12,7 @@
 }
 
 html {
-	font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+	font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 	color-scheme: dark;
 	accent-color: var(--nta-color-accent);
 	line-height: 1.5;
@@ -54,16 +54,16 @@ textarea {
 
 button,
 select {
-  text-transform: none;
+	text-transform: none;
 }
 
 button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-  -webkit-appearance: button;
-  background-color: transparent;
-  background-image: none;
+	-webkit-appearance: button;
+	background-color: transparent;
+	background-image: none;
 }
 
 p,
@@ -96,7 +96,7 @@ pre {
 }
 
 svg {
-    display: block;
-    vertical-align: middle;
-    overflow: visible
+	display: block;
+	vertical-align: middle;
+	overflow: visible;
 }

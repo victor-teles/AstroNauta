@@ -74,7 +74,6 @@ const UserConfigSchema = z.object({
 	/** Configure the defaults for the table of contents on each page. */
 	tableOfContents: TableOfContentsSchema(),
 
-
 	/** Enable and configure “Edit this page” links. */
 	editLink: z
 		.object({

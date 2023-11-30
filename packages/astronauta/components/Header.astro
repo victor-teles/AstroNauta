@@ -1,12 +1,7 @@
 ---
 import type { Props } from '../props';
 
-import {
-	LanguageSelect,
-	SiteTitle,
-	SocialIcons,
-	ThemeToggle,
-} from 'virtual:astronauta/components';
+import { LanguageSelect, SiteTitle, SocialIcons, ThemeToggle } from 'virtual:astronauta/components';
 import HeaderLinks from './HeaderLinks.astro';
 ---
 
@@ -18,7 +13,6 @@ import HeaderLinks from './HeaderLinks.astro';
 		<!-- <Search {...Astro.props} /> -->
 	</div>
 	<div class="nta-hidden md:nta-flex right-group">
-
 		<div class="nta-flex header-links">
 			<HeaderLinks {...Astro.props} />
 		</div>
@@ -45,7 +39,6 @@ import HeaderLinks from './HeaderLinks.astro';
 		gap: 1rem;
 		align-items: center;
 	}
-
 
 	.header-links::after {
 		content: '';

@@ -47,7 +47,9 @@ const t = useTranslations(locale);
 	}
 
 	:global([data-has-sidebar]) .header {
-		padding-inline-end: calc(var(--nta-nav-gap) + var(--nta-nav-pad-x) + var(--nta-menu-button-size));
+		padding-inline-end: calc(
+			var(--nta-nav-gap) + var(--nta-nav-pad-x) + var(--nta-menu-button-size)
+		);
 	}
 
 	.sidebar-pane {

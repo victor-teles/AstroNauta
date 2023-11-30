@@ -1,4 +1,3 @@
-
 # Credits
 
 - Project base using https://github.com/withastro/starlight
