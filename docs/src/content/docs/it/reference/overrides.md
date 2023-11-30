@@ -145,7 +145,7 @@ Dovrebbero includere solo [elementi consentiti all'interno di `<head>`](https://
 
 #### `Head`
 
-**Componente standard:** [`Head.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/Head.astro)
+**Componente standard:** [`Head.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/Head.astro)
 
 Componente renderizzato all'interno di `<head>` di ogni pagina.
 Include tag importanti tra cui `<title>` e `<meta charset="utf-8">`.
@@ -155,7 +155,7 @@ Se possibile, preferisci l'opzione di configurazione [`head`](/it/reference/conf
 
 #### `ThemeProvider`
 
-**Componente standard:** [`ThemeProvider.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/ThemeProvider.astro)
+**Componente standard:** [`ThemeProvider.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/ThemeProvider.astro)
 
 Componente renderizzato all'interno di `<head>` che imposta il supporto del tema scuro/chiaro.
 L'implementazione predefinita include uno script in linea e un `<template>` utilizzato dallo script in [`<ThemeSelect />`](#themeselect).
@@ -166,7 +166,7 @@ L'implementazione predefinita include uno script in linea e un `<template>` util
 
 #### `SkipLink`
 
-**Componente standard:** [`SkipLink.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/SkipLink.astro)
+**Componente standard:** [`SkipLink.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/SkipLink.astro)
 
 Componente renderizzato come primo elemento all'interno di `<body>` che si collega al contenuto della pagina principale per l'accessibilità.
 L'implementazione predefinita è nascosta finché un utente non la focalizza premendo il tasto tab con la tastiera.
@@ -181,7 +181,7 @@ Quando possibile, prediligi sovrascrivere un componente di livello inferiore.
 
 #### `PageFrame`
 
-**Componente standard:** [`PageFrame.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/PageFrame.astro)
+**Componente standard:** [`PageFrame.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/PageFrame.astro)
 
 Componente di layout avvolto attorno alla maggior parte del contenuto della pagina.
 L'implementazione predefinita imposta il layout header-sidebar-main e include slot denominati `header` e `sidebar` insieme a uno slot predefinito per il contenuto principale.
@@ -189,13 +189,13 @@ Renderizza inoltre [`<MobileMenuToggle />`](#mobilemenutoggle) per supportare l'
 
 #### `MobileMenuToggle`
 
-**Componente standard:** [`MobileMenuToggle.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/MobileMenuToggle.astro)
+**Componente standard:** [`MobileMenuToggle.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/MobileMenuToggle.astro)
 
 Componente reso all'interno di [`<PageFrame>`](#pageframe) responsabile dell'attivazione/disattivazione della navigazione della barra laterale su piccoli viewport (mobili).
 
 #### `TwoColumnContent`
 
-**Componente standard:** [`TwoColumnContent.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/TwoColumnContent.astro)
+**Componente standard:** [`TwoColumnContent.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/TwoColumnContent.astro)
 
 Componente di layout avvolto attorno alla colonna del contenuto principale e alla barra laterale destra (sommario).
 L'implementazione predefinita gestisce il passaggio da un layout a colonna singola con viewport piccolo a un layout a due colonne con viewport più grande.
@@ -208,41 +208,41 @@ Questi componenti eseguono il rendering della barra di navigazione superiore di 
 
 #### `Header`
 
-**Componente standard:** [`Header.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/Header.astro)
+**Componente standard:** [`Header.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/Header.astro)
 
 Componente dell'intestazione renderizzato nella parte superiore di ogni pagina.
 L'implementazione predefinita renderizza [`<SiteTitle />`](#sitetitle), [`<Search />`](#search), [`<SocialIcons />`](#socialicons), [`<ThemeSelect />`](#themeselect) e [`<LanguageSelect />`](#languageselect).
 
 #### `SiteTitle`
 
-**Componente standard:** [`SiteTitle.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/SiteTitle.astro)
+**Componente standard:** [`SiteTitle.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/SiteTitle.astro)
 
 Componente renderizzato all'inizio dell'intestazione del sito per visualizzare il titolo del sito.
 L'implementazione predefinita include la logica per il rendering dei loghi definita nella configurazione di Starlight.
 
 #### `Search`
 
-**Componente standard:** [`Search.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/Search.astro)
+**Componente standard:** [`Search.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/Search.astro)
 
 Componente utilizzato per eseguire il rendering dell'interfaccia utente di ricerca di Starlight.
 L'implementazione predefinita include il pulsante nell'intestazione e il codice per visualizzare una schermata di ricerca quando viene cliccata e caricare l'[interfaccia utente di Pagefind](https://pagefind.app/).
 
 #### `SocialIcons`
 
-**Componente standard:** [`SocialIcons.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/SocialIcons.astro)
+**Componente standard:** [`SocialIcons.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/SocialIcons.astro)
 
 Componente renderizzato nell'intestazione del sito, inclusi i collegamenti alle icone social.
 L'implementazione predefinita utilizza l'opzione [`social`](/it/reference/configuration#social) nella configurazione di Starlight per eseguire il rendering di icone e collegamenti.
 
 #### `ThemeSelect`
 
-**Componente standard:** [`ThemeSelect.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/ThemeSelect.astro)
+**Componente standard:** [`ThemeSelect.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/ThemeSelect.astro)
 
 Componente renderizzato nell'intestazione del sito che consente agli utenti di selezionare la combinazione di colori preferita.
 
 #### `LanguageSelect`
 
-**Componente standard:** [`LanguageSelect.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/LanguageSelect.astro)
+**Componente standard:** [`LanguageSelect.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/LanguageSelect.astro)
 
 Componente renderizzato nell'intestazione del sito che consente agli utenti di passare a una lingua diversa.
 
@@ -255,7 +255,7 @@ Nelle finestre strette questa è nascosta dietro un menu a discesa.
 
 #### `Sidebar`
 
-**Componente standard:** [`Sidebar.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/Sidebar.astro)
+**Componente standard:** [`Sidebar.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/Sidebar.astro)
 
 Componente visualizzato prima del contenuto della pagina che contiene la navigazione globale.
 L'implementazione predefinita viene visualizzata come barra laterale su viewport sufficientemente ampi e all'interno di un menu a discesa su viewport piccoli (mobili).
@@ -263,7 +263,7 @@ Visualizza inoltre [`<MobileMenuFooter />`](#mobilemenufooter) per mostrare elem
 
 #### `MobileMenuFooter`
 
-**Componente standard:** [`MobileMenuFooter.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/MobileMenuFooter.astro)
+**Componente standard:** [`MobileMenuFooter.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/MobileMenuFooter.astro)
 
 Componente visualizzato nella parte inferiore del menu a discesa mobile.
 L'implementazione predefinita visualizza [`<ThemeSelect />`](#themeselect) e [`<LanguageSelect />`](#languageselect).
@@ -277,20 +277,20 @@ Nelle finestre strette questo si comprime in un menu a discesa fisso.
 
 #### `PageSidebar`
 
-**Componente standard:** [`PageSidebar.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/PageSidebar.astro)
+**Componente standard:** [`PageSidebar.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/PageSidebar.astro)
 
 Componente renderizzato prima del contenuto della pagina principale per visualizzare un sommario.
 L'implementazione predefinita rende [`<TableOfContents />`](#tableofcontents) e [`<MobileTableOfContents />`](#mobiletableofcontents).
 
 #### `TableOfContents`
 
-**Componente standard:** [`TableOfContents.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/TableOfContents.astro)
+**Componente standard:** [`TableOfContents.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/TableOfContents.astro)
 
 Componente che renderizza il sommario della pagina corrente su finestre più ampie.
 
 #### `MobileTableOfContents`
 
-**Componente standard:** [`MobileTableOfContents.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/MobileTableOfContents.astro)
+**Componente standard:** [`MobileTableOfContents.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/MobileTableOfContents.astro)
 
 Componente che renderizza il sommario della pagina corrente su piccoli viewport (mobili).
 
@@ -302,20 +302,20 @@ Questi componenti vengono visualizzati nella colonna principale del contenuto de
 
 #### `Banner`
 
-**Componente standard:** [`Banner.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/Banner.astro)
+**Componente standard:** [`Banner.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/Banner.astro)
 
 Componente banner renderizzato nella parte superiore di ogni pagina.
 L'implementazione predefinita utilizza il valore frontmatter [`banner`](/it/reference/frontmatter#banner) della pagina per decidere se renderizzare o meno.
 
 #### `ContentPanel`
 
-**Componente standard:** [`ContentPanel.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/ContentPanel.astro)
+**Componente standard:** [`ContentPanel.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/ContentPanel.astro)
 
 Componente di layout utilizzato per racchiudere le sezioni della colonna del contenuto principale.
 
 #### `PageTitle`
 
-**Componente standard:** [`PageTitle.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/PageTitle.astro)
+**Componente standard:** [`PageTitle.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/PageTitle.astro)
 
 Componente contenente l'elemento `<h1>` per la pagina corrente.
 
@@ -323,21 +323,21 @@ Le implementazioni dovrebbero garantire di impostare `id="_top"` sull'elemento `
 
 #### `FallbackContentNotice`
 
-**Componente standard:** [`FallbackContentNotice.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/FallbackContentNotice.astro)
+**Componente standard:** [`FallbackContentNotice.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/FallbackContentNotice.astro)
 
 Avviso visualizzato agli utenti nelle pagine in cui non è disponibile una traduzione per la lingua corrente.
 Utilizzato solo su siti multilingue.
 
 #### `Hero`
 
-**Componente standard:** [`Hero.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/Hero.astro)
+**Componente standard:** [`Hero.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/Hero.astro)
 
 Componente renderizzato nella parte superiore della pagina quando [`hero`](/it/reference/frontmatter#hero) è impostato in frontmatter.
 L'implementazione predefinita mostra un titolo di grandi dimensioni, uno slogan e collegamenti di invito all'azione insieme a un'immagine facoltativa.
 
 #### `MarkdownContent`
 
-**Componente standard:** [`MarkdownContent.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/MarkdownContent.astro)
+**Componente standard:** [`MarkdownContent.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/MarkdownContent.astro)
 
 Componente renderizzato attorno al contenuto principale di ogni pagina.
 L'implementazione predefinita imposta gli stili di base da applicare al contenuto Markdown.
@@ -350,25 +350,25 @@ Questi componenti vengono visualizzati nella parte inferiore della colonna princ
 
 #### `Footer`
 
-**Componente standard:** [`Footer.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/Footer.astro)
+**Componente standard:** [`Footer.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/Footer.astro)
 
 Componente piè di pagina renderizzato nella parte inferiore di ogni pagina.
 L'implementazione predefinita visualizza [`<LastUpdated />`](#lastupdated), [`<Pagetion />`](#pagination) e [`<EditLink />`](#editlink).
 
 #### `LastUpdated`
 
-**Componente standard:** [`LastUpdated.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/LastUpdated.astro)
+**Componente standard:** [`LastUpdated.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/LastUpdated.astro)
 
 Componente renderizzato nel piè di pagina per visualizzare la data dell'ultimo aggiornamento.
 
 #### `EditLink`
 
-**Componente standard:** [`EditLink.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/EditLink.astro)
+**Componente standard:** [`EditLink.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/EditLink.astro)
 
 Componente renderizzato nel piè di pagina per visualizzare un collegamento al punto in cui è possibile modificare la pagina.
 
 #### `Pagination`
 
-**Componente standard:** [`Pagination.astro`](https://github.com/withastro/starlight/blob/main/packages/starlight/components/Pagination.astro)
+**Componente standard:** [`Pagination.astro`](https://github.com/withastro/starlight/blob/main/packages/astronauta/components/Pagination.astro)
 
 Componente renderizzato nel piè di pagina per visualizzare le frecce di navigazione tra le pagine precedenti/successive.
