@@ -14,7 +14,7 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           # Needs access to push to main
-          token: ${{ secrets.FREDKBOT_GITHUB_TOKEN }}
+          token: ${{ secrets.BEMOBOT_GITHUB_TOKEN }}
       - uses: pnpm/action-setup@v2
       - uses: actions/setup-node@v3
         with:
@@ -28,5 +28,5 @@ jobs:
         with:
           commit_message: '[ci] format'
           branch: ${{ github.head_ref }}
-          commit_user_name: fredkbot
-          commit_user_email: fred+astrobot@astro.build
+          commit_user_name: victor-mesquita
+          commit_user_email: skovhm@gmail.com
