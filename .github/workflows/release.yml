@@ -8,7 +8,7 @@ on:
 jobs:
   release:
     name: Release
-    if: ${{ github.repository_owner == 'withastro' }}
+    if: ${{ github.repository_owner == 'victor-teles' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo

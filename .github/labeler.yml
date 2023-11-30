@@ -16,10 +16,10 @@ i18n:
   - docs/src/content/docs/id/**/*
   - docs/src/content/docs/tr/**/*
 
-'🌟 core':
-  - packages/starlight/**
+'🧑🏻‍🚀 core':
+  - packages/astronauta/**
 
-'🌟 tailwind':
+'🧑🏻‍🚀 tailwind':
   - packages/tailwind/**
 
 '📚 docs':

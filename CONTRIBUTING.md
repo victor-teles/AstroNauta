@@ -118,12 +118,12 @@ You should then be able to open <http://localhost:4321> and see your changes.
 
 ### Unit tests
 
-The Starlight package includes unit tests in [`packages/starlight/__tests__/`](./packages/starlight/__tests__/), which are run using [Vitest][vitest].
+The Starlight package includes unit tests in [`packages/astronauta/__tests__/`](./packages/astronauta/__tests__/), which are run using [Vitest][vitest].
 
 To run tests, move into the Starlight package and then run `pnpm test`:
 
 ```sh
-cd packages/starlight
+cd packages/astronauta
 pnpm test
 ```
 
@@ -131,10 +131,10 @@ This will run tests and then listen for changes, re-running tests when files cha
 
 #### Test environments
 
-A lot of Starlight code relies on Vite virtual modules provided either by Astro or by Starlight itself. Each subdirectory of `packages/starlight/__tests__/` should contain a `vitest.config.ts` file that uses the `defineVitestConfig()` helper to define a valid test environment for tests in that directory. This helper takes a single argument, which provides a Starlight user config object:
+A lot of Starlight code relies on Vite virtual modules provided either by Astro or by Starlight itself. Each subdirectory of `packages/astronauta/__tests__/` should contain a `vitest.config.ts` file that uses the `defineVitestConfig()` helper to define a valid test environment for tests in that directory. This helper takes a single argument, which provides a Starlight user config object:
 
 ```ts
-// packages/starlight/__tests__/basics/vitest.config.ts
+// packages/astronauta/__tests__/basics/vitest.config.ts
 import { defineVitestConfig } from '../test-config';
 
 export default defineVitestConfig({
@@ -167,11 +167,11 @@ vi.mock('astro:content', async () =>
 To see how much of Starlight’s code is currently being tested, run `pnpm test:coverage` from the Starlight package:
 
 ```sh
-cd packages/starlight
+cd packages/astronauta
 pnpm test:coverage
 ```
 
-This will print a table to your terminal and also generate an HTML report you can load in a web browser by opening [`packages/starlight/__coverage__/index.html`](./packages/starlight/__coverage__/index.html).
+This will print a table to your terminal and also generate an HTML report you can load in a web browser by opening [`packages/astronauta/__coverage__/index.html`](./packages/astronauta/__coverage__/index.html).
 
 ## Translations
 
@@ -181,7 +181,7 @@ Translations help make Starlight accessible to more people.
 
 Starlight’s UI comes with some built-in text elements. For example, the table of contents on a Starlight page has a heading of “On this page” and the theme picker shows “Light”, “Dark”, and “Auto” labels. Starlight aims to provide these in as many languages as possible.
 
-Help out by adding or updating translation files in [`packages/starlight/translations`](./packages/starlight/translations/).
+Help out by adding or updating translation files in [`packages/astronauta/translations`](./packages/astronauta/translations/).
 Each language’s JSON file follows the [translation structure described in Starlight’s docs](https://starlight.astro.build/guides/i18n/#translate-starlights-ui).
 
 📺 **Prefer a visual walkthrough?** [Watch an introduction to Starlight’s translation files.](https://scrimba.com/scrim/cpb44bt3)
@@ -203,14 +203,14 @@ Visit **<https://i18n.starlight.astro.build>** to track translation progress for
 - Starlight is built as an Astro integration.
   Read the [Astro Integration API docs][api-docs] to learn more about how integrations work.
 
-  The Starlight integration is exported from [`packages/starlight/index.ts`](./packages/starlight/index.ts).
+  The Starlight integration is exported from [`packages/astronauta/index.ts`](./packages/astronauta/index.ts).
   It sets up Starlight’s routing logic, parses user config, and adds configuration to a Starlight user’s Astro project.
 
-- Most pages in a Starlight project are built using a single [`packages/starlight/index.astro`](./packages/starlight/index.astro) route.
+- Most pages in a Starlight project are built using a single [`packages/astronauta/index.astro`](./packages/astronauta/index.astro) route.
   If you’ve worked on an Astro site before, much of this should look familiar: it’s an Astro component and uses a number of other components to build a page based on user content.
 
 - Starlight consumes a user’s content from the `'docs'` [content collection](https://docs.astro.build/en/guides/content-collections/).
-  This allows us to specify the permissible frontmatter via [a Starlight-specific schema](./packages/starlight/schema.ts) and get predictable data while providing clear error messages if a user sets invalid frontmatter in a page.
+  This allows us to specify the permissible frontmatter via [a Starlight-specific schema](./packages/astronauta/schema.ts) and get predictable data while providing clear error messages if a user sets invalid frontmatter in a page.
 
 - Components that require JavaScript for their functionality are all written without a UI framework, most often as custom elements.
   This helps keep Starlight lightweight and makes it easier for a user to choose to add components from a framework of their choice to their project.
